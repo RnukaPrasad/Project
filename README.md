@@ -18,6 +18,7 @@ Go to project (frontend or backend) directory and run below command
  mvn clean install
  
  Java -jar frontend/target/frontend-1.0-RELEASE.jar
+ 
 export BACKEND=http:\\localhost:8085 (for front end)
 Then browse
 
