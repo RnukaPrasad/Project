@@ -6,29 +6,16 @@ pipeline {
                 cleanWs()
             }
         }
-        
-        stage ('clone'){
-            steps{
-                sh 'git clone https://github.com/RnukaPrasad/Project.git'
-            }
-        }
-        
         stage ('build'){
             steps {
-                dir ('Project'){
                     sh 'mvn clean install'
                 }
-            }
-        }
-        
-        stage  ('test'){
-            steps {
-                
-                dir ('Project'){
+       }
+       stage  ('test'){
+             steps {
                     archiveArtifacts artifacts: 'backend/target/*.jar', followSymlinks: false
                     archiveArtifacts artifacts: 'frontend/target/*.jar', followSymlinks: false
-                }
-            }
+                } 
         }
     }
 }
